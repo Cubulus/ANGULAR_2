@@ -1,0 +1,49 @@
+<!--
+    LA NAVEGACIÓN:
+    Para implementar la navegación en SPA's, la forma ideal y de máxima difusión será a través
+    del routerLink, este nos lo provee Angular. Las ventajas son varias, desde los tiempos
+    de carga y aprovechamiento óptimo de las capacidades del framewokr, el propio click, lanza
+    hacia un componente, template, visualizado como otra página distinta, a diferencia del href
+    que su función es redireccionar a otra página, realizando una recarga de toda la funcionalidad.
+-->
+
+<div class="collapse" id="navbarToggleExternalContent">
+    <div class="bg-dark p-4">
+        <!--
+        Etiqueta <a routerLink ="/nombre_referenciado_module.ts" routerLinkActive="active">Link</a>
+        -->
+        <span><a class="nav-link active" routerLink="/inicio">Inicio</a></span>
+        <h1 class="text-danger" style="text-align: center;">Navegacion routerLink</h1>
+        <a class="nav-link active" routerLink="/c1">Componente 1</a>
+        <a class="nav-link active" routerLink="/c2">Componente 2</a>
+        <a class="nav-link active" routerLink="/c3/hotel_riu"
+        [queryParams]="{entrada:'01/06/2022', salida:'03/06/2022', personas:2}">Componente 3</a>
+        <span class="text-muted">Selecciona un componente</span>
+    </div>
+</div>
+<nav class="navbar navbar-dark bg-dark">
+    <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+</nav>
+<!--
+    router-outlet:
+    Etiqueta contenedora especial de diseño angular, con la finalidad de mostrar los componentes hijos
+    de un componente. Por defecto todos los componentes son hijos del componente AppComponent, por lo que
+    si incluimos esta etiqueta dentro de la vista de AppComponent, logicamente renderizará cada uno de
+    dichos componentes del routing.
+    Es decir: routerLink mantiene el index.html y cuando está, la etiqueta pondrá y quitará el componente
+    al que hace referencia, mostrándola en la SPA.
+
+    Sintaxis:
+    <router-outlet></router-outlet>
+-->
+<router-outlet></router-outlet>
+
+<!--
+    Ejercicio, establecer un inicio y su ruta. Con estructura de Carrusel.
+-->
