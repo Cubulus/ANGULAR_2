@@ -1,0 +1,28 @@
+<!--
+    --------------------------INTERNACIONALIZACION-----------------------------
+    La librería que sostiene la internacionalización será ngx-translate, dependencia de Angular.
+    Instalación:
+      1º - Ejecutaremos los siguientes comandos:
+        a) npm install @ngx-translate/core@13.0.0
+        b) npm install @ngx-translate/http-loader@6.0.0 --save
+        c) Revisión y uso de versiones: https://www.npmjs.com/
+      
+      2º - Creación de los archivos de los idiomas, correspondientes dentro de los assets,
+          en la carpeta i18n, y dentro crearemos los archivos con estructura json del
+          idioma correspondiente.
+          
+          [Sintaxis en es.json:{
+          "texto.español":"Sentencia_español"
+          }]
+
+          [Sintaxis en en.json:{
+          "texto.español":"Sentencia_ingles"
+          }]
+-->
+<div style="text-align: center; margin:0 auto">
+  <button class="btn btn-danger" (click)='cambiarIdioma("es")'>Español</button>
+  <button class="btn btn-primary" (click)='cambiarIdioma("en")'>Ingles</button>
+  <hr>
+  <h2> {{'app.titulo'|translate}}</h2>
+  <button class="btn btn-secondary">{{'app.boton'| translate}}</button>
+</div>
